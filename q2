@@ -1,0 +1,15 @@
+<Expression> ::= <Term> <AddOp>
+<Term> ::= <Factor> <MulOp>
+<Factor> ::= <Power> <UnaryOp>
+<Power> ::= <Primary> <PowerOp>
+<Primary> ::= <Literal> | <Identifier> | '(' <Expression> ')'
+<AddOp> ::= '+' <Term> <AddOp> | '-' <Term> <AddOp> | ε
+<MulOp> ::= '*' <Factor> <MulOp> | '/' <Factor> <MulOp> | '%' <Factor> <MulOp> | ε
+<UnaryOp> ::= '-' | '+'
+<PowerOp> ::= '^'
+<Literal> ::= <Float> | <Integer>
+<Float> ::= <Integer> '.' <Digit>+
+<Integer> ::= <Digit>+
+<Identifier> ::= <Letter> (<Letter> | <Digit>)*
+<Letter> ::= 'A' | 'B' | 'C' | ... | 'Z' | 'a' | 'b' | 'c' | ... | 'z'
+<Digit> ::= '0' | '1' | '2' | ... | '9'
