@@ -1,0 +1,95 @@
+1.           <Expression>
+                |
+             <Term>+
+             /     \
+        <Factor>*  '(' <Expression> ')'
+           /   \          |
+  <Power>    <UnaryOp> <Term>-
+    /   \        |     /    \
+<Primary> <Literal>  <Factor> <MulOp>
+     |       |        /   |   /    \
+     a      12       x    -   <Factor>
+                                /     \
+                              <Power>  <Primary>
+                                /    \     |
+                          <Primary>  <Literal>
+                              |         |
+                             '('       7.0
+                              |
+                           <Expression>
+                               |
+                            <Term>-
+                            /     \
+                       <Factor>/   <MulOp>
+                         /   \    /   |   \
+                   <Power>  <UnaryOp>  <Factor>
+                     /   \      |        /    \
+                <Primary> <Literal>   <Power> <Primary>
+                    |       |          /    \     |
+                   a       12         x   <PowerOp> <Literal>
+                                                      |
+                                                     1.0
+
+2.             <Expression>
+                 |
+                <Term>+
+                  |
+                <Factor>
+                  |
+               <Power>
+                 |
+             <Primary>
+                 |
+                  a
+                  |
+                <PowerOp>
+                  |
+                <Primary>
+                  |
+                 12
+                  |
+                <MulOp>
+                  |
+                <Factor>
+                  |
+                <Primary>
+                  |
+                   /
+                  / \
+                x   -
+                   /   \
+                 7.0  <Expression>
+                           |
+                         <Term>-
+                           |
+                         <Factor>/
+                           |
+                         <Power>
+                           |
+                       <Primary>
+                           |
+                           (
+                           |
+                        <Expression>
+                           |
+                         <Term>*
+                           |
+                        <Factor>
+                           |
+                        <Power>
+                           |
+                       <Primary>
+                           |
+                          x
+                           |
+                        <MulOp>/
+                           |
+                        <Factor>
+                           |
+                        <Power>
+                           |
+                       <Primary>
+                           |
+                        <Literal>
+                           |
+                          7.0
