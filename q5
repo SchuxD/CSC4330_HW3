@@ -1,0 +1,10 @@
+1. for ;; {}
+2. for ; ; {}
+3. for ; ; ; {}
+4. for _, _ = range PrimaryExpr {}
+5. for range PrimaryExpr {}
+6. for _ = range PrimaryExpr {}
+7. for _, _ = PrimaryExpr; ; {}
+8. for _, _ = PrimaryExpr; ; ; {}
+9. for _, _ = PrimaryExpr; ; ; _ = range PrimaryExpr {}
+10. for _, _ = PrimaryExpr; _ = range PrimaryExpr; _ = range PrimaryExpr {}
