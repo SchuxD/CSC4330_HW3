@@ -1,0 +1,41 @@
+  1.      <ForStmt>
+           |
+        'for' ';'
+           |
+           ';'
+           |
+           '}'
+
+
+ 2.          <ForStmt>
+              |
+           'for' <ForClause> '{' '}'
+              |
+         <ForClause>
+           /  |   \
+         ';'  ';'  ';'
+
+
+3.           <ForStmt>
+              |
+           'for' <ForClause> '{' '}'
+              |
+         <ForClause>
+           /  |   |   |   \
+         ';'  ';'  ';'  <Expression>
+                       /        \
+                     <Identifier> ';'
+                        |
+                        _
+
+4.            <ForStmt>
+              |
+         'for' <RangeClause> '{' '}'
+              |
+         <RangeClause>
+           /  |   \
+   [IdentifierList]  <'range'>  <Expression>
+                              /        \
+                            <Identifier> ';'
+                               |
+                               _
